@@ -18,16 +18,22 @@ public class Program
                 continue;
             }
 
-            if (numInput % 2 == 1 && numInput < 60)
-                Console.WriteLine($"{numInput} is odd and less than 60");
-            else if (numInput % 2 == 0 && numInput >= 2 && numInput <= 24)
-                Console.WriteLine($"{numInput} is even and less than 25");
-            else if (numInput % 2 == 0 && numInput >= 26 && numInput <= 60)
-                Console.WriteLine($"{numInput} is even and between 26 and 60 inclusive");
-            else if (numInput % 2 == 0 && numInput > 60)
-                Console.WriteLine($"{numInput} is even and greater than 60");
-            else if (numInput % 2 == 1 && numInput > 60)
-                Console.WriteLine($"{numInput} is odd and greater than 60");
+            if (numInput%2 == 1) // Odds
+            { 
+                if (numInput < 60)
+                    Console.WriteLine($"{numInput} is odd and less than 60");
+                else
+                    Console.WriteLine($"{numInput} is odd and greater than 60");
+            }
+            else // Evens
+            {
+                if (numInput <= 24)
+                    Console.WriteLine($"{numInput} is even and less than 25");
+                else if (numInput <= 60)
+                    Console.WriteLine($"{numInput} is even and between 26 and 60 inclusive");
+                else
+                    Console.WriteLine($"{numInput} is even and greater than 60");
+            }
 
             Console.Write("Continue? y/n: ");
             string prompt = Console.ReadLine();
